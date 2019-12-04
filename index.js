@@ -15,7 +15,7 @@ module.exports = postcss.plugin('postcss-unwrap-mq', (opts = { }) => {
       const matched = test.test(atrule.params)
       if (matched) {
         atrule.walkRules(rule => {
-          atrule.parent.append(rule)
+          root.insertBefore(atrule, rule)
         })
         atrule.remove()
       }
