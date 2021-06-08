@@ -1,24 +1,28 @@
-let postcss = require('postcss')
-
-module.exports = postcss.plugin('postcss-unwrap-mq', (opts = { }) => {
+module.exports = (opts = {}) => {
+  // eslint-disable-next-line prefer-let/prefer-let
   const {
-    regex
+    regex = undefined
   } = opts
 
-  return (root, result) => {
-    if (!regex) {
-      return
+  if (!regex) {
+    return {
+      postcssPlugin: 'postcss-unwrap-mq',
     }
+  }
 
-    root.walkAtRules('media', atrule => {
-      const test = new RegExp(regex)
-      const matched = test.test(atrule.params)
+  return {
+    postcssPlugin: 'postcss-unwrap-mq',
+    AtRule(atrule) {
+      // eslint-disable-next-line security/detect-non-literal-regexp
+      let test = new RegExp(regex)
+      let matched = test.test(atrule.params)
       if (matched) {
         atrule.walkRules(rule => {
-          root.insertBefore(atrule, rule)
+          atrule.parent.insertBefore(atrule, rule)
         })
         atrule.remove()
       }
-    })
+    }
   }
-})
+}
+module.exports.postcss = true
