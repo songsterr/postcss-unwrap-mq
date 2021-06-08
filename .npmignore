@@ -1,6 +1,4 @@
-yarn-error.log
-yarn.lock
-
+.idea
 *.test.js
 .travis.yml
 .editorconfig
