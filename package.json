@@ -1,6 +1,6 @@
 {
   "name": "postcss-unwrap-mq",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "PostCSS plugin to extract matched media queries to their parents",
   "keywords": [
     "postcss",
