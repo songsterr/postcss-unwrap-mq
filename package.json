@@ -1,6 +1,6 @@
 {
   "name": "postcss-unwrap-mq",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "PostCSS plugin to extract matched media queries to their parents",
   "keywords": [
     "postcss",
@@ -9,38 +9,25 @@
     "unwrap",
     "media-query"
   ],
-  "scripts": {
-    "test": "jest && eslint ."
-  },
   "author": "Andrey Subbotin <andrey@subbotin.me>",
   "license": "MIT",
   "repository": "songsterr/postcss-unwrap-mq",
   "dependencies": {
-    "postcss": "^8.3.0"
+    "postcss": "8.4.5"
   },
   "devDependencies": {
-    "@logux/eslint-config": "^45.4.4",
-    "eslint": "^7.28.0",
-    "eslint-config-postcss": "^4.0.0",
-    "eslint-config-standard": "^16.0.3",
-    "eslint-plugin-es5": "^1.5.0",
-    "eslint-plugin-import": "^2.23.4",
-    "eslint-plugin-jest": "^24.3.6",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-prefer-let": "^1.1.0",
-    "eslint-plugin-promise": "^5.1.0",
-    "eslint-plugin-security": "^1.4.0",
-    "eslint-plugin-standard": "^4.1.0",
-    "eslint-plugin-unicorn": "^33.0.1",
-    "jest": "^27.0.4"
-  },
-  "eslintConfig": {
-    "extends": "eslint-config-postcss"
+    "jest": "27.4.7",
+    "standard": "16.0.4"
   },
   "engines": {
-    "node": ">=8.0.0"
+    "node": ">=16",
+    "npm": ">=8"
   },
   "jest": {
     "testEnvironment": "node"
+  },
+  "scripts": {
+    "lint": "standard --fix",
+    "test": "jest && eslint ."
   }
 }

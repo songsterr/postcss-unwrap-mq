@@ -1,21 +1,19 @@
 module.exports = (opts = {}) => {
-  // eslint-disable-next-line prefer-let/prefer-let
   const {
     regex = undefined
   } = opts
 
   if (!regex) {
     return {
-      postcssPlugin: 'postcss-unwrap-mq',
+      postcssPlugin: 'postcss-unwrap-mq'
     }
   }
 
   return {
     postcssPlugin: 'postcss-unwrap-mq',
-    AtRule(atrule) {
-      // eslint-disable-next-line security/detect-non-literal-regexp
-      let test = new RegExp(regex)
-      let matched = test.test(atrule.params)
+    AtRule (atrule) {
+      const test = new RegExp(regex)
+      const matched = test.test(atrule.params)
       if (matched) {
         atrule.walkRules(rule => {
           atrule.parent.insertBefore(atrule, rule)
@@ -25,4 +23,5 @@ module.exports = (opts = {}) => {
     }
   }
 }
+
 module.exports.postcss = true
