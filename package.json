@@ -1,6 +1,6 @@
 {
   "name": "postcss-unwrap-mq",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "PostCSS plugin to extract matched media queries to their parents",
   "keywords": [
     "postcss",
@@ -13,11 +13,11 @@
   "license": "MIT",
   "repository": "songsterr/postcss-unwrap-mq",
   "dependencies": {
-    "postcss": "8.4.12"
+    "postcss": "8.4.20"
   },
   "devDependencies": {
-    "jest": "27.5.1",
-    "standard": "16.0.4"
+    "jest": "29.3.1",
+    "standard": "16.0.3"
   },
   "engines": {
     "node": ">=16",
