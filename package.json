@@ -13,7 +13,7 @@
   "license": "MIT",
   "repository": "songsterr/postcss-unwrap-mq",
   "dependencies": {
-    "postcss": "8.4.20"
+    "postcss": "8.4.31"
   },
   "devDependencies": {
     "jest": "29.3.1",
